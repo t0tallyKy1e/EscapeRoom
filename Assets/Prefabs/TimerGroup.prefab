@@ -39,10 +39,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2750554714705911392}
     m_Modifications:
-    - target: {fileID: 631742414, guid: b2f2644f89531d340a2c0cc7d1453d46, type: 3}
-      propertyPath: m_Name
-      value: TimerCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 631742418, guid: b2f2644f89531d340a2c0cc7d1453d46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -127,9 +123,9 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 631742417, guid: b2f2644f89531d340a2c0cc7d1453d46, type: 3}
-      propertyPath: m_Camera
-      value: 
+    - target: {fileID: 631742414, guid: b2f2644f89531d340a2c0cc7d1453d46, type: 3}
+      propertyPath: m_Name
+      value: TimerCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f2644f89531d340a2c0cc7d1453d46, type: 3}
@@ -158,11 +154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2750554714705911392}
     m_Modifications:
-    - target: {fileID: 9185030418443826206, guid: 6f705d81f0fad894b8e01516a1e13f63,
-        type: 3}
-      propertyPath: m_Name
-      value: Timer
-      objectReference: {fileID: 0}
     - target: {fileID: 9185030418443826177, guid: 6f705d81f0fad894b8e01516a1e13f63,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,6 +258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185030418443826206, guid: 6f705d81f0fad894b8e01516a1e13f63,
+        type: 3}
+      propertyPath: m_Name
+      value: Timer
       objectReference: {fileID: 0}
     - target: {fileID: 9185030418443826207, guid: 6f705d81f0fad894b8e01516a1e13f63,
         type: 3}
