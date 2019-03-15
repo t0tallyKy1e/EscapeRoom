@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Flashlight : MonoBehaviour {
+    public Light light;
     public bool power; // 0 = off ... 1 = on
     public float offIntensity;
     public float onIntensity;
 
-    public Light light;
     private float inputCooldown = 0.0f;
     private float cooldownTime = .5f;
     private bool isGrabbed;
@@ -43,11 +43,11 @@ public class Flashlight : MonoBehaviour {
 
     void TurnOff() {
         power = false;
-        light.enabled = !light.enabled;
+        light.intensity = offIntensity;
     }
 
     void TurnOn() {
         power = true;
-        light.enabled = !light.enabled;
+        light.intensity = onIntensity;
     }
 }

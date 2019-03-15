@@ -641,10 +641,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
+  cloudProjectId: 085616bd-f592-47a8-8d32-6e59cbfa7f03
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: EscapeRoom
+  organizationId: ar-vr-project
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

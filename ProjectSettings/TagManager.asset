@@ -9,6 +9,8 @@ TagManager:
   - GameManager
   - KeyCard
   - KeyCardScanner
+  - RayGun
+  - Bullet
   layers:
   - Default
   - TransparentFX

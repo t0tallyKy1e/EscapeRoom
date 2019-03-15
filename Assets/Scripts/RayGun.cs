@@ -45,7 +45,7 @@ public class RayGun : MonoBehaviour {
     void Shoot() {
         magazine[currentBullet].transform.position = transform.position;
         magazine[currentBullet].SetActive(true);
-        magazine[currentBullet].GetComponent<Rigidbody>().AddForce(magazine[currentBullet].transform.up * fireSpeed);
+        magazine[currentBullet].GetComponent<Rigidbody>().AddForce(-transform.forward * fireSpeed);
 
         fireRateTime = fireRate;
         currentBullet++;
