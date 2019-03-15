@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Flashlight : MonoBehaviour {
-    public Light light;
     public bool power; // 0 = off ... 1 = on
     public float offIntensity;
     public float onIntensity;
 
+    public Light light;
     private float inputCooldown = 0.0f;
     private float cooldownTime = .5f;
     private bool isGrabbed;
     
     void Start() {
-        TurnOff();
+        TurnOn();
         isGrabbed = GetComponent<OVRGrabbable>().isGrabbed;
     }
     
@@ -43,11 +43,11 @@ public class Flashlight : MonoBehaviour {
 
     void TurnOff() {
         power = false;
-        light.intensity = offIntensity;
+        light.enabled = !light.enabled;
     }
 
     void TurnOn() {
         power = true;
-        light.intensity = onIntensity;
+        light.enabled = !light.enabled;
     }
 }

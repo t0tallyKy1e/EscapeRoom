@@ -343,6 +343,7 @@
      <Compile Include="Assets\Scripts\KeyCardScanner.cs" />
      <Compile Include="Assets\Scripts\PlayerGoalCollision.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\RayGun.cs" />
      <Compile Include="Assets\Scripts\SetCorrectCameraHeight.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
