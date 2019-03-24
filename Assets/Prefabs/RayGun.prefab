@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7125589881485862984}
   m_Layer: 0
   m_Name: RayGun
-  m_TagString: Untagged
+  m_TagString: RayGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d8ba49952aa4cad4fa20d050a5003ba8, type: 3}
+  - {fileID: 2100000, guid: acb4aa452cfd6134495a85cda7caa271, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,6 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3342931596959819423, guid: 584c0951d7cf37648ad02783c09d6d47, type: 3}
-  fireSpeed: 800
+  fireSpeed: 1500
   fireRate: 0.5
-  magazineSize: 10
+  magazineSize: 100
+  xOffset: 0
+  yOffset: 0.1
+  zOffset: 0.8

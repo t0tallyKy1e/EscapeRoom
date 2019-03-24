@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    void OnCollisionEnter(Collision col) {
+    void OnTriggerEnter(Collider col) {
         string coltag = col.gameObject.tag;
 
         if(coltag != "Player" && coltag != "RayGun") {

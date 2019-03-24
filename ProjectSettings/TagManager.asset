@@ -11,6 +11,7 @@ TagManager:
   - KeyCardScanner
   - RayGun
   - Bullet
+  - AlienArtifact
   layers:
   - Default
   - TransparentFX

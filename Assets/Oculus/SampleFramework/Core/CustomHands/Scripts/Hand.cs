@@ -8,9 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using OVRTouchSample;
-#if UNITY_EDITOR
 using UnityEngine.SceneManagement;
-#endif
 
 namespace OVRTouchSample
 {
@@ -230,6 +228,12 @@ namespace OVRTouchSample
                     collider.enabled = false;
                     collider.transform.localScale = new Vector3(COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN, COLLIDER_SCALE_MIN);
                 }
+            }
+        }
+
+        private void OnTriggerEnter(Collider col) {
+            if(col.gameObject.tag == "AlienArtifact") {
+                SceneManager.LoadScene("ShipScene");
             }
         }
     }

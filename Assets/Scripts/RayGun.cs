@@ -8,6 +8,10 @@ public class RayGun : MonoBehaviour {
     public float fireRate;
     public int magazineSize;
 
+    public float xOffset;
+    public float yOffset;
+    public float zOffset;
+
     private GameObject[] magazine;
     private bool isGrabbed;
     private int currentBullet;
@@ -43,7 +47,8 @@ public class RayGun : MonoBehaviour {
     }
 
     void Shoot() {
-        magazine[currentBullet].transform.position = transform.position;
+        magazine[currentBullet].transform.position = transform.position /*+ new Vector3(xOffset, yOffset, zOffset)*/;
+        magazine[currentBullet].transform.rotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         magazine[currentBullet].SetActive(true);
         magazine[currentBullet].GetComponent<Rigidbody>().AddForce(-transform.forward * fireSpeed);
 
