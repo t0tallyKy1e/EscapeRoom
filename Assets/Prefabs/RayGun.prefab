@@ -123,9 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
+  m_snapPosition: 1
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 2308511189475973307, guid: 9cb28c3bdc57141409649ccc339b9e74,
+    type: 3}
   m_grabPoints: []
 --- !u!114 &7125589881485862984
 MonoBehaviour:
@@ -143,6 +144,5 @@ MonoBehaviour:
   fireSpeed: 1500
   fireRate: 0.5
   magazineSize: 100
-  xOffset: 0
-  yOffset: 0.1
-  zOffset: 0.8
+  bulletOffset: {fileID: 3618284724757773740, guid: 65996a93481324042a0d16340aecde31,
+    type: 3}

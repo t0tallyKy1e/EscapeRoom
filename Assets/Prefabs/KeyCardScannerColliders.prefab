@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3721913151177028782}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_2
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913151177028787}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -59,6 +59,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: -491
+  startZ: -564
+  debugOpen: 0
 --- !u!1 &3721913151606429038
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +75,7 @@ GameObject:
   - component: {fileID: 3721913151606429033}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_8
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +102,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913151606429038}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -118,6 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: 370
+  startZ: 297
+  debugOpen: 0
 --- !u!1 &3721913151791662673
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +175,7 @@ GameObject:
   - component: {fileID: 3721913151824745362}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_1
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,7 +202,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913151824745367}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -215,6 +221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: -563
+  startZ: -491
+  debugOpen: 0
 --- !u!1 &3721913151853529880
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +237,7 @@ GameObject:
   - component: {fileID: 3721913151853529883}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_3
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +264,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913151853529880}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -274,6 +283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: -356
+  startZ: -283
+  debugOpen: 0
 --- !u!1 &3721913152104236824
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +299,7 @@ GameObject:
   - component: {fileID: 3721913152104236827}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_4
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,7 +326,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913152104236824}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -333,6 +345,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: -193
+  startZ: -266
+  debugOpen: 0
 --- !u!1 &3721913152597345033
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +361,7 @@ GameObject:
   - component: {fileID: 3721913152597345028}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_6
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913152597345033}
   m_LocalRotation: {x: 0.24192187, y: 0.9702957, z: -0, w: 0}
-  m_LocalPosition: {x: 4.36, y: 2.749, z: 13.698}
+  m_LocalPosition: {x: 4.36, y: 2.749, z: 1.02}
   m_LocalScale: {x: 0.19999993, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 3721913151791662674}
@@ -373,7 +388,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913152597345033}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -392,6 +407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: -73
+  startZ: 0
+  debugOpen: 0
 --- !u!1 &3721913152802575894
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +423,7 @@ GameObject:
   - component: {fileID: 3721913152802575889}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_7
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +450,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913152802575894}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -451,6 +469,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: 224
+  startZ: 297
+  debugOpen: 0
 --- !u!1 &3721913152840675720
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +485,7 @@ GameObject:
   - component: {fileID: 3721913152840675723}
   m_Layer: 0
   m_Name: KeyCardScannerCollider_5
-  m_TagString: Untagged
+  m_TagString: KeyCardScanner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +512,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3721913152840675720}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -510,3 +531,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 0}
   keyCard: {fileID: 0}
+  endZ: 0
+  startZ: 73
+  debugOpen: 0

@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d8ba49952aa4cad4fa20d050a5003ba8, type: 3}
+  - {fileID: 2100000, guid: 2048fc88447123b419f60cb4c0a02b46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,9 +93,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
+  m_snapPosition: 1
+  m_snapOrientation: 1
+  m_snapOffset: {fileID: 9175157112079697521, guid: 236a58c113fe2b94484a3960bf42160c,
+    type: 3}
   m_grabPoints: []
 --- !u!54 &8010641773692099143
 Rigidbody:
