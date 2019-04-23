@@ -12,6 +12,8 @@ TagManager:
   - RayGun
   - Bullet
   - AlienArtifact
+  - Translatable
+  - Translator
   layers:
   - Default
   - TransparentFX
