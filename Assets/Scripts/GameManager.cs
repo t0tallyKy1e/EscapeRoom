@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public float gravity;
+    public AudioClip ambientSounds;
+
+    private AudioSource audioSource;
 
     void Start() {
-        
-    }
-
-    void Update() {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = ambientSounds;
+        audioSource.Play();
     }
 }

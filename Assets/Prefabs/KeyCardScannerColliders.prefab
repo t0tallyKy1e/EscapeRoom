@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 7159737423621985170, guid: 72e44a1980c41b946b92bc0ab11c9ce6, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: -491
   startZ: -564
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 279100505265870016, guid: f34917945ee668244ac17ad9b41126b2, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: 370
   startZ: 297
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 3721913151791662673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1710334, y: -1.4928503, z: 8.446131}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children:
   - {fileID: 3721913151177028780}
   - {fileID: 3721913151824745360}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 6900224227553408587, guid: cb76b4ebf0e95d844b4c635b96114271, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: -563
   startZ: -491
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 5772634737779542488, guid: f99c075a431fba04a90bea3e6a8a032d, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: -356
   startZ: -283
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 3566250997837880188, guid: 59a8a282f10812a4dad33a2659ba334e, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: -193
   startZ: -266
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 6378680487386359802, guid: eebb3855e2e881544a42854bbe19ed4a, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: -73
   startZ: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1374279885110664627, guid: 819411fbd023946439952329def859a6, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: 224
   startZ: 297
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047f4c200374d1340a63b1c45a223120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 4009666610254654904, guid: bf3732cbb6e2a0545902cbf4ae22ce2a, type: 3}
+  door: {fileID: 0}
   keyCard: {fileID: 0}
   endZ: 0
   startZ: 73

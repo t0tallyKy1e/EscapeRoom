@@ -45,8 +45,8 @@ public class RayGun : MonoBehaviour {
     }
 
     void Shoot() {
-        magazine[currentBullet].transform.position = transform.position + bulletOffset.position;
-        magazine[currentBullet].transform.rotation = Quaternion.Euler(90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        magazine[currentBullet].transform.position = transform.position/* + bulletOffset.position*/;
+        magazine[currentBullet].transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         magazine[currentBullet].SetActive(true);
         magazine[currentBullet].GetComponent<Rigidbody>().AddForce(-transform.forward * fireSpeed);
 
@@ -62,8 +62,11 @@ public class RayGun : MonoBehaviour {
     void PopulateMagazine() {
         for(int i = 0; i < magazineSize; i++) {
             magazine[i] = Instantiate(bullet);
+
+            magazine[i].transform.parent = transform;
+
             magazine[i].transform.position = transform.position;
-            magazine[i].transform.rotation = Quaternion.Euler(90, 0, 0);
+            // magazine[i].transform.rotation = Quaternion.Euler(90, 0, 0);
         }
     }
 }

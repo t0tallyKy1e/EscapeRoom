@@ -2,18 +2,19 @@
 
 public class Translatable : MonoBehaviour
 {
-    public Material alienPoster;
-    public Material earthPoster;
+    public Sprite alienPoster;
+    public Sprite earthPoster;
+    public GameObject child;
 
     void Start() {
-        gameObject.GetComponent<Renderer>().material = alienPoster;
+        child.GetComponent<SpriteRenderer>().sprite = alienPoster;
     }
 
     public void TranslateToAlien() {
-        gameObject.GetComponent<Renderer>().material = alienPoster;
+        child.GetComponent<SpriteRenderer>().sprite = alienPoster;
     }
 
     public void TranslateToEarth() {
-        gameObject.GetComponent<Renderer>().material = earthPoster;
+        child.GetComponent<SpriteRenderer>().sprite = earthPoster;
     }
 }

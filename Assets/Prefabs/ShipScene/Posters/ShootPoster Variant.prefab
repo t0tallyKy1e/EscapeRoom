@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4800892566091583838
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3689221962346926907, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_Name
+      value: ShootPoster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.979
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266299450301454604, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579736812849433416, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: alienPoster
+      value: 
+      objectReference: {fileID: 21300000, guid: b9b7e7c816ad6dc4794f279066a64b92,
+        type: 3}
+    - target: {fileID: 4579736812849433416, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: earthPoster
+      value: 
+      objectReference: {fileID: 21300000, guid: bfa8ac721d9eb4d4590991485581c025,
+        type: 3}
+    - target: {fileID: 452854383208809275, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b9b7e7c816ad6dc4794f279066a64b92,
+        type: 3}
+    - target: {fileID: 452854383208809275, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 13.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 452854383208809275, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.7600002
+      objectReference: {fileID: 0}
+    - target: {fileID: 452854383208809275, guid: 3ddacb7888733a34895bbb6119ee88bc,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ddacb7888733a34895bbb6119ee88bc, type: 3}
