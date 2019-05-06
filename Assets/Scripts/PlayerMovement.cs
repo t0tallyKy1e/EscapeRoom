@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour {
 		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		Move();
 	}

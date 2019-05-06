@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 3303a90e6cdf3ff4eb20e5574c5cd007
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: NEWAlienbindingmocap:Alien01
+    100004: NEWAlienbindingmocap:head
+    100006: NEWAlienbindingmocap:Headend
+    100008: NEWAlienbindingmocap:Left_SHoulder
+    100010: NEWAlienbindingmocap:Leftarm
+    100012: NEWAlienbindingmocap:Leftclavicle
+    100014: NEWAlienbindingmocap:Leftfoot
+    100016: NEWAlienbindingmocap:LeftForearm
+    100018: NEWAlienbindingmocap:Lefthand
+    100020: NEWAlienbindingmocap:Leftleg
+    100022: NEWAlienbindingmocap:Leftmiddle
+    100024: NEWAlienbindingmocap:Leftmiddle1
+    100026: NEWAlienbindingmocap:Leftmiddle2
+    100028: NEWAlienbindingmocap:Leftmiddle3
+    100030: NEWAlienbindingmocap:Leftpinky
+    100032: NEWAlienbindingmocap:Leftpinky1
+    100034: NEWAlienbindingmocap:Leftpinky2
+    100036: NEWAlienbindingmocap:Leftpointer
+    100038: NEWAlienbindingmocap:Leftpointer1
+    100040: NEWAlienbindingmocap:Leftpointer2
+    100042: NEWAlienbindingmocap:Leftpointer3
+    100044: NEWAlienbindingmocap:Leftthumb
+    100046: NEWAlienbindingmocap:Leftthumb1
+    100048: NEWAlienbindingmocap:Leftthumb2
+    100050: NEWAlienbindingmocap:Leftthumb3
+    100052: NEWAlienbindingmocap:Lefttoe
+    100054: NEWAlienbindingmocap:Lefttoebase
+    100056: NEWAlienbindingmocap:Leftupleg
+    100058: NEWAlienbindingmocap:Neck
+    100060: NEWAlienbindingmocap:Nose
+    100062: NEWAlienbindingmocap:Pelvis
+    100064: NEWAlienbindingmocap:pTorus1
+    100066: NEWAlienbindingmocap:Right_SHoulder
+    100068: NEWAlienbindingmocap:Rightarm
+    100070: NEWAlienbindingmocap:Rightclavicle
+    100072: NEWAlienbindingmocap:Rightfoot
+    100074: NEWAlienbindingmocap:RightForearm
+    100076: NEWAlienbindingmocap:Righthand
+    100078: NEWAlienbindingmocap:Rightleg
+    100080: NEWAlienbindingmocap:Rightmiddle
+    100082: NEWAlienbindingmocap:Rightmiddle1
+    100084: NEWAlienbindingmocap:Rightmiddle2
+    100086: NEWAlienbindingmocap:Rightmiddle3
+    100088: NEWAlienbindingmocap:Rightpinky
+    100090: NEWAlienbindingmocap:Rightpinky1
+    100092: NEWAlienbindingmocap:Rightpinky2
+    100094: NEWAlienbindingmocap:Rightpointer
+    100096: NEWAlienbindingmocap:Rightpointer1
+    100098: NEWAlienbindingmocap:Rightpointer2
+    100100: NEWAlienbindingmocap:Rightpointer3
+    100102: NEWAlienbindingmocap:Rightthumb
+    100104: NEWAlienbindingmocap:Rightthumb1
+    100106: NEWAlienbindingmocap:Rightthumb2
+    100108: NEWAlienbindingmocap:Rightthumb3
+    100110: NEWAlienbindingmocap:Righttoe
+    100112: NEWAlienbindingmocap:Righttoebase
+    100114: NEWAlienbindingmocap:Rightupleg
+    100116: NEWAlienbindingmocap:Spine1
+    100118: NEWAlienbindingmocap:Spine2
+    100120: NEWAlienbindingmocap:Spine3
+    400000: //RootNode
+    400002: NEWAlienbindingmocap:Alien01
+    400004: NEWAlienbindingmocap:head
+    400006: NEWAlienbindingmocap:Headend
+    400008: NEWAlienbindingmocap:Left_SHoulder
+    400010: NEWAlienbindingmocap:Leftarm
+    400012: NEWAlienbindingmocap:Leftclavicle
+    400014: NEWAlienbindingmocap:Leftfoot
+    400016: NEWAlienbindingmocap:LeftForearm
+    400018: NEWAlienbindingmocap:Lefthand
+    400020: NEWAlienbindingmocap:Leftleg
+    400022: NEWAlienbindingmocap:Leftmiddle
+    400024: NEWAlienbindingmocap:Leftmiddle1
+    400026: NEWAlienbindingmocap:Leftmiddle2
+    400028: NEWAlienbindingmocap:Leftmiddle3
+    400030: NEWAlienbindingmocap:Leftpinky
+    400032: NEWAlienbindingmocap:Leftpinky1
+    400034: NEWAlienbindingmocap:Leftpinky2
+    400036: NEWAlienbindingmocap:Leftpointer
+    400038: NEWAlienbindingmocap:Leftpointer1
+    400040: NEWAlienbindingmocap:Leftpointer2
+    400042: NEWAlienbindingmocap:Leftpointer3
+    400044: NEWAlienbindingmocap:Leftthumb
+    400046: NEWAlienbindingmocap:Leftthumb1
+    400048: NEWAlienbindingmocap:Leftthumb2
+    400050: NEWAlienbindingmocap:Leftthumb3
+    400052: NEWAlienbindingmocap:Lefttoe
+    400054: NEWAlienbindingmocap:Lefttoebase
+    400056: NEWAlienbindingmocap:Leftupleg
+    400058: NEWAlienbindingmocap:Neck
+    400060: NEWAlienbindingmocap:Nose
+    400062: NEWAlienbindingmocap:Pelvis
+    400064: NEWAlienbindingmocap:pTorus1
+    400066: NEWAlienbindingmocap:Right_SHoulder
+    400068: NEWAlienbindingmocap:Rightarm
+    400070: NEWAlienbindingmocap:Rightclavicle
+    400072: NEWAlienbindingmocap:Rightfoot
+    400074: NEWAlienbindingmocap:RightForearm
+    400076: NEWAlienbindingmocap:Righthand
+    400078: NEWAlienbindingmocap:Rightleg
+    400080: NEWAlienbindingmocap:Rightmiddle
+    400082: NEWAlienbindingmocap:Rightmiddle1
+    400084: NEWAlienbindingmocap:Rightmiddle2
+    400086: NEWAlienbindingmocap:Rightmiddle3
+    400088: NEWAlienbindingmocap:Rightpinky
+    400090: NEWAlienbindingmocap:Rightpinky1
+    400092: NEWAlienbindingmocap:Rightpinky2
+    400094: NEWAlienbindingmocap:Rightpointer
+    400096: NEWAlienbindingmocap:Rightpointer1
+    400098: NEWAlienbindingmocap:Rightpointer2
+    400100: NEWAlienbindingmocap:Rightpointer3
+    400102: NEWAlienbindingmocap:Rightthumb
+    400104: NEWAlienbindingmocap:Rightthumb1
+    400106: NEWAlienbindingmocap:Rightthumb2
+    400108: NEWAlienbindingmocap:Rightthumb3
+    400110: NEWAlienbindingmocap:Righttoe
+    400112: NEWAlienbindingmocap:Righttoebase
+    400114: NEWAlienbindingmocap:Rightupleg
+    400116: NEWAlienbindingmocap:Spine1
+    400118: NEWAlienbindingmocap:Spine2
+    400120: NEWAlienbindingmocap:Spine3
+    2100000: lambert1
+    2300000: NEWAlienbindingmocap:pTorus1
+    3300000: NEWAlienbindingmocap:pTorus1
+    4300000: NEWAlienbindingmocap:Alien01
+    4300002: NEWAlienbindingmocap:pTorus1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: NEWAlienbindingmocap:Alien01
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,6 +14,7 @@ TagManager:
   - AlienArtifact
   - Translatable
   - Translator
+  - Crystal
   layers:
   - Default
   - TransparentFX

@@ -44,6 +44,7 @@ public class RayGun : MonoBehaviour {
         }
     }
 
+    // uses object pool design pattern
     void Shoot() {
         magazine[currentBullet].transform.position = transform.position/* + bulletOffset.position*/;
         magazine[currentBullet].transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
