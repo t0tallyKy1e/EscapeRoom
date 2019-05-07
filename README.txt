@@ -17,6 +17,8 @@ All code written by me can be found in /Assets/Scripts/
         - SetCorrectCameraHeight.cs
         ** I'm not sure where these came from or if they have been used so I'm afraid to delete them
 
+    - Code in Hand.cs tagged with "// new code here" is also written by me.
+
 
 
 
@@ -47,6 +49,13 @@ manual
     - most interactions in this game require grabbing and placing objects where they would logically go
     - the flashlight can be used as a translator
         - point the flashlight towards alien language, it translates to English
+
+    - to win:
+        - get key card from Flight Deck for Escape Pod #3
+            - bring oxygen tank from Laboratory to escape pod #3 oxygen tank chamber
+            - place red flay round crystal (from prison cell #2) in wall of Escape Pod #3
+            - enter button sequence into escape pod #3
+                - 2, 3, 5, 6, 9
 
 install and run
     - under /Builds/, open EscapeRoom.exe to launch game

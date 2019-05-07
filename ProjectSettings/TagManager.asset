@@ -16,6 +16,9 @@ TagManager:
   - Translator
   - Crystal
   - EscapePodHandle
+  - EscapePodKey
+  - Button
+  - OxygenTank
   layers:
   - Default
   - TransparentFX

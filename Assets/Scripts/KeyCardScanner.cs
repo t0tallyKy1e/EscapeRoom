@@ -7,6 +7,7 @@ public class KeyCardScanner : MonoBehaviour {
     public GameObject keyCard;
     public GameObject closedScreen;
     public GameObject openScreen;
+    public string acceptedKeyCardType;
 
     public float endZ;
     public float startZ;
@@ -18,8 +19,10 @@ public class KeyCardScanner : MonoBehaviour {
     private bool doorShouldOpen = false;
 
     void Start() {
-        closedScreen.gameObject.SetActive(true);
-        openScreen.gameObject.SetActive(false);
+        if(closedScreen != null) {
+            closedScreen.gameObject.SetActive(true);
+            openScreen.gameObject.SetActive(false);
+        }
     }
 
     void Update() {
@@ -50,11 +53,22 @@ public class KeyCardScanner : MonoBehaviour {
             scanCooldown = 0.0f;
         }
 
-		if(col.gameObject.tag == keyCard.tag && scanCooldown == 0.0f) {
+        string collidedKeyCardType = "";
+        KeyCard tempKeyCard = col.gameObject.GetComponent<KeyCard>();
+
+        if(tempKeyCard != null) {
+            collidedKeyCardType = col.gameObject.GetComponent<KeyCard>().type;
+        } else {
+            collidedKeyCardType = null;
+        }
+
+		if(collidedKeyCardType != null && collidedKeyCardType == acceptedKeyCardType && col.gameObject.tag == keyCard.tag && scanCooldown == 0.0f) {
             doorShouldOpen = true;
             scanCooldown = scanCooldownTime;
-            closedScreen.gameObject.SetActive(false);
-            openScreen.gameObject.SetActive(true);
+            if(closedScreen != null) {
+                closedScreen.gameObject.SetActive(false);
+                openScreen.gameObject.SetActive(true);
+            }
 		}
 	}
 }

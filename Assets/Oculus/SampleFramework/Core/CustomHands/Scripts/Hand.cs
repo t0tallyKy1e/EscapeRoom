@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine;
 using OVRTouchSample;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace OVRTouchSample
 {
@@ -55,6 +56,15 @@ namespace OVRTouchSample
 
         private bool m_restoreOnInputAcquired = false;
 
+        public int[] buttonsPressed;
+        private int currentButton;
+        private int numberOfButtons;
+        
+        private float buttonCooldownTime = 0.5f;
+        private float buttonCooldown = 0.0f;
+
+        public bool buttonSequenceCorrect;
+
         private void Awake()
         {
             m_grabber = GetComponent<OVRGrabber>();
@@ -79,6 +89,11 @@ namespace OVRTouchSample
 #if UNITY_EDITOR
             OVRPlugin.SendEvent("custom_hand", (SceneManager.GetActiveScene().name == "CustomHands").ToString(), "sample_framework");
 #endif
+
+
+            // new code here
+            currentButton = 0;
+            numberOfButtons = 5;
         }
 
         private void Update()
@@ -94,6 +109,12 @@ namespace OVRTouchSample
             CollisionEnable(collisionEnabled);
 
             UpdateAnimStates();
+
+            if(buttonCooldown > 0.0f) {
+                buttonCooldown -= Time.deltaTime;
+            } else {
+                buttonCooldown = 0.0f;
+            }
         }
 
         // Just checking the state of the index and thumb cap touch sensors, but with a little bit of
@@ -235,9 +256,48 @@ namespace OVRTouchSample
         private void OnTriggerEnter(Collider col) {
             if(col.gameObject.tag == "AlienArtifact") {
                 SceneManager.LoadScene("ShipScene");
-            } else if(col.gameObject.tag == "EscapePodHandle") {
-                
+            } else if(col.gameObject.tag == "Button" && buttonCooldown == 0.0f) {
+                buttonCooldown = buttonCooldownTime;
+
+                buttonsPressed[currentButton] = col.gameObject.GetComponent<EscapePodButton>().number;
+                currentButton++;
+
+                bool sequenceIsCorrect = checkButtonSequence();
+
+                if(sequenceIsCorrect) {
+                    GameObject.Find("GameManager").GetComponent<GameManager>().SetButtonSequenceStatus(true);
+                }
+
+                if(currentButton >= numberOfButtons) {
+                    currentButton = 0;
+                }
             }
+        }
+
+        private bool checkButtonSequence() {
+            int[] buttonSequence = new int[numberOfButtons];
+            int[] tempSequence = new int[numberOfButtons];
+            bool correctSequence = true;
+
+            buttonSequence[0] = 2;
+            buttonSequence[1] = 3;
+            buttonSequence[2] = 5;
+            buttonSequence[3] = 6;
+            buttonSequence[4] = 9;
+            
+            for(int i = 0; i < numberOfButtons; i++) {
+                tempSequence[i] = buttonsPressed[i];
+            }
+
+            Array.Sort(tempSequence);
+
+            for(int i = 0; i < 5 && correctSequence; ++i) {
+                if(tempSequence[i] != buttonSequence[i]) {
+                    correctSequence = false;
+                }
+            }
+
+            return correctSequence;
         }
     }
 }
