@@ -5,13 +5,15 @@ using UnityEngine;
 public class ShipEscapePodDoor : MonoBehaviour {
     public bool isOpen;
     public bool unlocked;
+    public float maxXPosition;
+    public float minXPosition;
     public float maxZPosition;
     public float minZPosition;
     public float doorSpeed;
 
     void Open() {
         float step = doorSpeed * Time.deltaTime;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, maxZPosition), step);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector3(maxXPosition, gameObject.transform.position.y, maxZPosition), step);
     }
 
     public void Unlock() {
@@ -19,9 +21,6 @@ public class ShipEscapePodDoor : MonoBehaviour {
     }
 
     void Update() {
-
-        Debug.Log(transform.position.z);
-
         if(unlocked && !isOpen) {
             Open();
         } else if(unlocked && !isOpen && ((minZPosition < maxZPosition && gameObject.transform.position.y <= maxZPosition) || (minZPosition > maxZPosition && gameObject.transform.position.y >= maxZPosition))) {

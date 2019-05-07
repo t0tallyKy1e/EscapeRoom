@@ -231,9 +231,12 @@ namespace OVRTouchSample
             }
         }
 
+        // new code here - Kyle
         private void OnTriggerEnter(Collider col) {
             if(col.gameObject.tag == "AlienArtifact") {
                 SceneManager.LoadScene("ShipScene");
+            } else if(col.gameObject.tag == "EscapePodHandle") {
+                
             }
         }
     }

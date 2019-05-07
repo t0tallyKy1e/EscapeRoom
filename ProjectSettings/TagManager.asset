@@ -15,6 +15,7 @@ TagManager:
   - Translatable
   - Translator
   - Crystal
+  - EscapePodHandle
   layers:
   - Default
   - TransparentFX

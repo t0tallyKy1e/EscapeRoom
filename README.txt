@@ -11,13 +11,11 @@ Oculus SDK - in Assets/Oculus/
 ---------------------------------------
 Code written by me
 ---------------------------------------
-All code written by me can be found in Assets/Scripts/
+All code written by me can be found in /Assets/Scripts/
     - Excluding:
         - CameraController.cs
         - SetCorrectCameraHeight.cs
         ** I'm not sure where these came from or if they have been used so I'm afraid to delete them
-
-I have been playing around with Unity for a couple of years now so most algorithms came from my head unless stated otherwise
 
 
 
@@ -27,8 +25,8 @@ Division of Labor
 ---------------------------------------
 Alex: Ship Design, Lab equipment design, Escape Pod Design, 
 Brett: Alien language design, props for translations
-Dhahran: All other props in the ship not mentioned above, Suburb scene's props, Alien design
-Kyle: All programming / about 95% of the Unity work (other 5% from Alex where needed)
+Dhahran: All other props in the ship not mentioned above, Suburb scene's props, Alien design, sounds
+Kyle: All programming, getting everything integrated into Unity took up most of my time
 
 All: worked on the general idea equally, progression from beginning to end
 

@@ -5,6 +5,9 @@ using UnityEngine;
 public class KeyCardScanner : MonoBehaviour {
     public GameObject door;
     public GameObject keyCard;
+    public GameObject closedScreen;
+    public GameObject openScreen;
+
     public float endZ;
     public float startZ;
     public bool debugOpen;
@@ -13,6 +16,11 @@ public class KeyCardScanner : MonoBehaviour {
     private float scanCooldownTime = 0.5f;
     private float scanCooldown = 0.0f;
     private bool doorShouldOpen = false;
+
+    void Start() {
+        closedScreen.gameObject.SetActive(true);
+        openScreen.gameObject.SetActive(false);
+    }
 
     void Update() {
         bool doorIsActive = door.activeSelf;
@@ -23,7 +31,13 @@ public class KeyCardScanner : MonoBehaviour {
             float step = doorSpeed * Time.deltaTime;
             door.gameObject.transform.position = Vector3.MoveTowards(door.gameObject.transform.position, new Vector3(door.gameObject.transform.position.x, door.gameObject.transform.position.y, endZ), step);
         } else if((debugOpen || doorShouldOpen) && doorIsAtEnd) {
-            door.gameObject.SetActive(!doorIsActive);
+            door.gameObject.SetActive(false);
+        } else if(door.gameObject.transform.position.z >= endZ) {
+            doorIsAtEnd = true;
+        } 
+        
+        if(debugOpen) {
+            // Debug.Log(door.gameObject.transform.position.z);
         }
     }
 
@@ -39,6 +53,8 @@ public class KeyCardScanner : MonoBehaviour {
 		if(col.gameObject.tag == keyCard.tag && scanCooldown == 0.0f) {
             doorShouldOpen = true;
             scanCooldown = scanCooldownTime;
+            closedScreen.gameObject.SetActive(false);
+            openScreen.gameObject.SetActive(true);
 		}
 	}
 }
