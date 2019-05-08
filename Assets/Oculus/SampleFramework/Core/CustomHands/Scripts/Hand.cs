@@ -60,7 +60,7 @@ namespace OVRTouchSample
         private int currentButton;
         private int numberOfButtons;
         
-        private float buttonCooldownTime = 0.5f;
+        private float buttonCooldownTime = 0.65f;
         private float buttonCooldown = 0.0f;
 
         public bool buttonSequenceCorrect;

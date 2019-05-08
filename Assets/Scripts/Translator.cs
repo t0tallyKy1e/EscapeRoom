@@ -2,13 +2,15 @@
 
 public class Translator : MonoBehaviour {
     public Flashlight flashlight;
-    public float radius;
+    public float radius; // for multiple raycasts
 
     private GameObject lastPosterTranslated = null;
 
     void Update() {
-        RaycastHit hit;
+        // Debug.DrawRay(flashlight.transform.position, flashlight.transform.up, Color.white, 1, false);
+
         if(flashlight.power) {
+            RaycastHit hit;
             bool hitObject = Physics.Raycast(flashlight.transform.position, flashlight.transform.up, out hit);
 
             if(hitObject) {

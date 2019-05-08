@@ -11,10 +11,12 @@ public class Flashlight : MonoBehaviour {
     private float inputCooldown = 0.0f;
     private float cooldownTime = .5f;
     private bool isGrabbed;
+    private AudioSource audioSource;
     
     void Start() {
         TurnOn();
         isGrabbed = GetComponent<OVRGrabbable>().isGrabbed;
+        audioSource = GetComponent<AudioSource>();
     }
     
     void Update() {
@@ -27,13 +29,16 @@ public class Flashlight : MonoBehaviour {
         }
 
         if(isGrabbed && (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Two))) {
+
             if(power) {
                 if(inputCooldown == 0.0f) {
+                    audioSource.Play();
                     TurnOff();
                     inputCooldown = cooldownTime;
                 }
             } else {
                 if(inputCooldown == 0.0f) {
+                    audioSource.Play();
                     TurnOn();
                     inputCooldown = cooldownTime;
                 }

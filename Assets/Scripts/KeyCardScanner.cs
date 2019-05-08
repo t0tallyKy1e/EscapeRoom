@@ -13,16 +13,19 @@ public class KeyCardScanner : MonoBehaviour {
     public float startZ;
     public bool debugOpen;
 
-    private float doorSpeed = 8.0f;
+    private float doorSpeed = 4.0f;
     private float scanCooldownTime = 0.5f;
     private float scanCooldown = 0.0f;
     private bool doorShouldOpen = false;
+    private AudioSource audioSource;
 
     void Start() {
         if(closedScreen != null) {
             closedScreen.gameObject.SetActive(true);
             openScreen.gameObject.SetActive(false);
         }
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -63,6 +66,7 @@ public class KeyCardScanner : MonoBehaviour {
         }
 
 		if(collidedKeyCardType != null && collidedKeyCardType == acceptedKeyCardType && col.gameObject.tag == keyCard.tag && scanCooldown == 0.0f) {
+            audioSource.Play();
             doorShouldOpen = true;
             scanCooldown = scanCooldownTime;
             if(closedScreen != null) {

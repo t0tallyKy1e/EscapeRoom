@@ -7,16 +7,16 @@ public class RayGun : MonoBehaviour {
     public float fireSpeed;
     public float fireRate;
     public int magazineSize;
-    
     public Transform bulletOffset;
 
     private GameObject[] magazine;
     private bool isGrabbed;
     private int currentBullet;
-
     private float fireRateTime;
+    private AudioSource audioSource;
     
     void Start() {
+        audioSource = GetComponent<AudioSource>();
         isGrabbed = GetComponent<OVRGrabbable>().isGrabbed;
 
         magazine = new GameObject[magazineSize];
@@ -46,6 +46,7 @@ public class RayGun : MonoBehaviour {
 
     // uses object pool design pattern
     void Shoot() {
+        audioSource.Play();
         magazine[currentBullet].transform.position = transform.position/* + bulletOffset.position*/;
         magazine[currentBullet].transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         magazine[currentBullet].SetActive(true);

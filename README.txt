@@ -17,7 +17,7 @@ All code written by me can be found in /Assets/Scripts/
         - SetCorrectCameraHeight.cs
         ** I'm not sure where these came from or if they have been used so I'm afraid to delete them
 
-    - Code in Hand.cs tagged with "// new code here" is also written by me.
+    - Code in /Assets/Oculus/SampleFramework/Core/CustomHands/Scripts/Hand.cs tagged with "// new code here" is also written by me.
 
 
 
