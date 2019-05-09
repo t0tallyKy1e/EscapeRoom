@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 
+// I don't think this script is used and I don't remember writing it.
 public class SetCorrectCameraHeight : MonoBehaviour
 {
     enum TrackingSpace

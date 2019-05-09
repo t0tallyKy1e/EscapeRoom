@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
     public float postWinTime;
     private bool ranWinFunction = false;
 
-
     void Start() {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = ambientSounds;
@@ -40,12 +39,15 @@ public class GameManager : MonoBehaviour {
     void Update() {
         winStatus = CheckWinStatus();
 
+        // check if the player has won
         if(winStatus) {
+            // make sure wingame() only runs once
             if(!ranWinFunction) {
                 WinGame();
                 postWinCooldown = postWinTime;
             }
             
+            // quit after a certain number of seconds, otherwise move escape pod towards goal
             if(postWinCooldown <= 0.0f) {
                 Debug.Log("Application Quit");
                 Application.Quit();
@@ -75,11 +77,13 @@ public class GameManager : MonoBehaviour {
     }
 
     void WinGame() {
+        // play alarm noise a few times to indicate a win
         if(timesToPlayWinSound > 0 && !winSoundSource.isPlaying) {
             winSoundSource.Play();
             timesToPlayWinSound--;
         }
 
+        // set everything in place
         Quaternion tempRotation =  escapePodDoor.transform.rotation;
         tempRotation.y = escapePodDoorEndRotationY;
         escapePodDoor.transform.rotation = tempRotation;

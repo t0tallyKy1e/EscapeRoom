@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// I don't think this script is used and I don't remember writing it.
 public class CameraController : MonoBehaviour {
 	[SerializeField]
 	private bool invert;

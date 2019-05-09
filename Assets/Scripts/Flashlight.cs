@@ -22,14 +22,15 @@ public class Flashlight : MonoBehaviour {
     void Update() {
         isGrabbed = GetComponent<OVRGrabbable>().isGrabbed;
 
+        // delay button press after pressing button
         if(inputCooldown > 0.0f) {
             inputCooldown -= Time.deltaTime;
         } else {
             inputCooldown = 0.0f;
         }
 
+        // if the flashlight is grabbed and the button is pressed, turn on / off
         if(isGrabbed && (OVRInput.Get(OVRInput.Button.One) || OVRInput.Get(OVRInput.Button.Two))) {
-
             if(power) {
                 if(inputCooldown == 0.0f) {
                     audioSource.Play();

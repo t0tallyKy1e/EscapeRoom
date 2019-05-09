@@ -13,9 +13,11 @@ public class Translator : MonoBehaviour {
             RaycastHit hit;
             bool hitObject = Physics.Raycast(flashlight.transform.position, flashlight.transform.up, out hit);
 
+            // check if an object is hit
             if(hitObject) {
                 // Debug.Log(hit.transform.name);
 
+                // if it's translatable, translate it
                 if(hit.transform.tag == "Translatable") {
                     lastPosterTranslated = hit.transform.gameObject;
                     hit.transform.gameObject.GetComponent<Translatable>().TranslateToEarth();

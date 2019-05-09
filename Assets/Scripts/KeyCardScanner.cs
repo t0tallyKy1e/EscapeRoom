@@ -21,6 +21,7 @@ public class KeyCardScanner : MonoBehaviour {
     private AudioSource audioSource;
 
     void Start() {
+        // set correct screen type
         if(closedScreen != null) {
             closedScreen.gameObject.SetActive(true);
             openScreen.gameObject.SetActive(false);
@@ -33,6 +34,7 @@ public class KeyCardScanner : MonoBehaviour {
         bool doorIsActive = door.activeSelf;
         bool doorIsAtEnd = door.gameObject.transform.position == new Vector3(endZ, door.gameObject.transform.position.y, door.gameObject.transform.position.z);
 
+        // move door if opened
         if((debugOpen || doorShouldOpen) && !doorIsAtEnd) {
             // https://answers.unity.com/questions/570573/how-do-i-slowly-translate-a-object-to-a-other-obje.html - Vector3.MoveTowards() found here
             float step = doorSpeed * Time.deltaTime;
@@ -56,6 +58,7 @@ public class KeyCardScanner : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
         bool doorIsActive = door.activeSelf;
 
+        // only allow player to scan every few seconds
         if(scanCooldown > 0.0f) {
             scanCooldown -= Time.deltaTime;
         } else {
@@ -65,17 +68,20 @@ public class KeyCardScanner : MonoBehaviour {
         string collidedKeyCardType = "";
         KeyCard tempKeyCard = col.gameObject.GetComponent<KeyCard>();
 
+        // make sure the key card has a type
         if(tempKeyCard != null) {
             collidedKeyCardType = col.gameObject.GetComponent<KeyCard>().type;
         } else {
             collidedKeyCardType = null;
         }
 
+        // if key card is the right kind, open door
 		if(collidedKeyCardType != null && collidedKeyCardType == acceptedKeyCardType && col.gameObject.tag == keyCard.tag && scanCooldown == 0.0f) {
             Open();
 		}
 	}
 
+    // open attached door
     public void Open() {
         audioSource.Play();
         doorShouldOpen = true;

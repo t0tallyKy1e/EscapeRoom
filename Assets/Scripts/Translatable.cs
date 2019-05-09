@@ -6,6 +6,7 @@ public class Translatable : MonoBehaviour
     public Sprite earthPoster;
     public GameObject child;
 
+    // script used to change sprite on posters, based on whether or not translator is pointing at it
     void Start() {
         child.GetComponent<SpriteRenderer>().sprite = alienPoster;
     }

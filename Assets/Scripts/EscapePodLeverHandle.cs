@@ -12,6 +12,7 @@ public class EscapePodLeverHandle : MonoBehaviour {
         
     }
 
+    // unlock door if handle is moved - this script is not used asfar as I know
     void Update() {
         if(debug || transform.rotation.z >= onRotation) {
             door.GetComponent<ShipEscapePodDoor>().Unlock();

@@ -12,12 +12,14 @@ public class PowerCrystalCollider : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
+        // play sound, turn on light if crystal is in the correct spot
         if(col.gameObject.tag == "Crystal" && !gm.crystalCollected) {
             audioSource.Play();
             gm.SetCrystalStatus(true);
             light.intensity = 1.25f;
         }
 
+        // play sound for powered escape pod
         if(gm.crystalCollected && audioSource.clip == powerUpSound && !audioSource.isPlaying) {
             audioSource.clip = poweredEscapePodSound;
             audioSource.loop = true;

@@ -21,12 +21,13 @@ public class ShipEscapePodDoor : MonoBehaviour {
     }
 
     void Update() {
+        // if door is unlocked, open it
         if(unlocked && !isOpen) {
             Open();
         } else if(unlocked && !isOpen && ((minZPosition < maxZPosition && gameObject.transform.position.y <= maxZPosition) || (minZPosition > maxZPosition && gameObject.transform.position.y >= maxZPosition))) {
             isOpen = true;
         } else if(isOpen) {
-            Debug.Log("deactivate");
+            // Debug.Log("deactivate");
             gameObject.SetActive(!gameObject.activeSelf); // deactivate door
         }
     }

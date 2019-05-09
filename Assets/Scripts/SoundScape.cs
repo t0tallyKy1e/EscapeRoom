@@ -17,6 +17,7 @@ public class SoundScape : MonoBehaviour {
         beepCooldownTime = 1.5f;
     }
 
+    // this is a colection of sounds to play when player is being abducted
     void Update() {
         cooldownTime -= Time.deltaTime;
         beepCooldownTime -= Time.deltaTime;

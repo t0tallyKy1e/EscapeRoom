@@ -23,6 +23,7 @@ public class Timer : MonoBehaviour {
 		isFinished = false;
 	}
 
+	// display time when stopped
 	public void Stop() {
 		isFinished = true;
 

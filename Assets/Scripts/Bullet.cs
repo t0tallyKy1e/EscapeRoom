@@ -3,6 +3,7 @@
 public class Bullet : MonoBehaviour {
     private Rigidbody rigidBody;
 
+    // deactivate bullet if it hits a wall or the player
     void OnTriggerEnter(Collider col) {
         string coltag = col.gameObject.tag;
 

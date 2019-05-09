@@ -17,6 +17,7 @@ public class Alien : MonoBehaviour {
     private AudioSource audioSource;
     private bool fallSoundHasPlayed = false;
 
+    // check if alien is next to KeyCardScanner #3, drop flashlight and keycard
     void OnTriggerEnter(Collider col) {
         if(col.gameObject.tag == "AlienTrigger") {
             flashlight.SetActive(true);
@@ -43,11 +44,13 @@ public class Alien : MonoBehaviour {
 
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, targetPosition.transform.position, step);
 
+        // allow the player to move after alien is deactivated
         if(gameObject.transform.position == targetPosition.transform.position) {
             gameObject.SetActive(false);
             GameObject.Find("VRPlayer").GetComponent<OVRPlayerController>().playerCanMove = true;
         }
 
+        // timer to play sound when alien falls
         if(timeToEnd > 0.0f) {
             timeToEnd -= Time.deltaTime;
 
@@ -62,6 +65,7 @@ public class Alien : MonoBehaviour {
             timeToEnd = 0.0f;
         }
 
+        // adjust player to correct height before they are frozen for opening "cutscene"
         if(adjustPlayerPositionTime > 0.0f) {
             adjustPlayerPositionTime -= Time.deltaTime;
         } else {

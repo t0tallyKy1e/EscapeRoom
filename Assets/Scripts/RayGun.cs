@@ -23,6 +23,7 @@ public class RayGun : MonoBehaviour {
 
         PopulateMagazine();
 
+        // deactivate bullets while they aren't being used
         for(int i = 0; i < magazineSize; i++) {
             magazine[i].SetActive(false);
         }
@@ -33,6 +34,7 @@ public class RayGun : MonoBehaviour {
     void Update() {
         isGrabbed = GetComponent<OVRGrabbable>().isGrabbed;
 
+        // if gun is grabed and trigger is pressed, shoot gun
         if(isGrabbed && Input.GetAxis("Oculus_CrossPlatform_SecondaryIndexTrigger") > 0 && currentBullet < magazineSize && fireRateTime == 0.0f) {
             Shoot();
         }
@@ -68,7 +70,6 @@ public class RayGun : MonoBehaviour {
             magazine[i].transform.parent = transform;
 
             magazine[i].transform.position = transform.position;
-            // magazine[i].transform.rotation = Quaternion.Euler(90, 0, 0);
         }
     }
 }
