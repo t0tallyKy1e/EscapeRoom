@@ -9,15 +9,17 @@ Oculus SDK - in Assets/Oculus/
 
 
 ---------------------------------------
-Code written by me
+Code written by Kyle
 ---------------------------------------
-All code written by me can be found in /Assets/Scripts/
+All code written by Kyle can be found in /Assets/Scripts/
     - Excluding:
         - CameraController.cs
+        - PlayerMovement.cs
         - SetCorrectCameraHeight.cs
         ** I'm not sure where these came from or if they have been used so I'm afraid to delete them
 
     - Code in /Assets/Oculus/SampleFramework/Core/CustomHands/Scripts/Hand.cs tagged with "// new code here" is also written by me.
+    - Code in /Assets/Oculus/VR/Scripts/Util/OVRPlayerController.cs altered to include playerCanMove and footsteps
 
 
 
@@ -25,12 +27,20 @@ All code written by me can be found in /Assets/Scripts/
 ---------------------------------------
 Division of Labor
 ---------------------------------------
-Alex: Ship Design, Lab equipment design, Escape Pod Design, 
-Brett: Alien language design, props for translations
-Dhahran: All other props in the ship not mentioned above, Suburb scene's props, Alien design, sounds
+Alex: Ship Design, Lab equipment design, Escape Pod Design, some Unity brain-storming when Kyle ran into issues
+Brett: Alien language design, props for translations, everything with text
+Dhahran: All other props in the ship not mentioned above, Suburb scene's props, Alien design, retrieved sound effects, created ambient sounds in ship using a combination of sounds
 Kyle: All programming, getting everything integrated into Unity took up most of my time
 
 All: worked on the general idea equally, progression from beginning to end
+
+
+
+---------------------------------------
+Known Issues
+---------------------------------------
+- Extra footstep when player stops moving
+- Alien goes through the floor a little bit
 
 
 
@@ -44,7 +54,7 @@ manual
     -            movement   :   left analog stick
     -              sprint   :   back left trigger
     -                grab   :   index finger trigger (on either controller)
-    - flashlight on / off   :   A button (right controller)
+    - flashlight on / off   :   A/B button (right controller)
 
     - most interactions in this game require grabbing and placing objects where they would logically go
     - the flashlight can be used as a translator
@@ -53,7 +63,7 @@ manual
     - to win:
         - get key card from Flight Deck for Escape Pod #3
             - bring oxygen tank from Laboratory to escape pod #3 oxygen tank chamber
-            - place red flay round crystal (from prison cell #2) in wall of Escape Pod #3
+            - place red flat/round crystal (from prison cell #2) in wall of Escape Pod #3
             - enter button sequence into escape pod #3
                 - 2, 3, 5, 6, 9
 

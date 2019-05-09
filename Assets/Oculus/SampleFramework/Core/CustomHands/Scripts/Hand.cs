@@ -60,7 +60,7 @@ namespace OVRTouchSample
         private int currentButton;
         private int numberOfButtons;
         
-        private float buttonCooldownTime = 0.65f;
+        public float buttonCooldownTime;
         private float buttonCooldown = 0.0f;
 
         public bool buttonSequenceCorrect;
@@ -115,6 +115,8 @@ namespace OVRTouchSample
             } else {
                 buttonCooldown = 0.0f;
             }
+
+            // Debug.Log(buttonCooldown);
         }
 
         // Just checking the state of the index and thumb cap touch sensors, but with a little bit of
@@ -255,8 +257,10 @@ namespace OVRTouchSample
         // new code here - Kyle
         private void OnTriggerEnter(Collider col) {
             if(col.gameObject.tag == "AlienArtifact") {
-                SceneManager.LoadScene("ShipScene");
+                SceneManager.LoadScene("AbductionScene");
             } else if(col.gameObject.tag == "Button" && buttonCooldown == 0.0f) {
+                col.gameObject.GetComponent<AudioSource>().Play();
+
                 buttonCooldown = buttonCooldownTime;
 
                 buttonsPressed[currentButton] = col.gameObject.GetComponent<EscapePodButton>().number;

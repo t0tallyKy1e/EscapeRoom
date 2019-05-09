@@ -19,6 +19,8 @@ TagManager:
   - EscapePodKey
   - Button
   - OxygenTank
+  - AlienTrigger
+  - Alien
   layers:
   - Default
   - TransparentFX

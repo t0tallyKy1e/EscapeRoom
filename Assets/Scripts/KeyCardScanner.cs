@@ -11,6 +11,7 @@ public class KeyCardScanner : MonoBehaviour {
 
     public float endZ;
     public float startZ;
+    public Transform endPosition;
     public bool debugOpen;
 
     private float doorSpeed = 4.0f;
@@ -35,7 +36,12 @@ public class KeyCardScanner : MonoBehaviour {
         if((debugOpen || doorShouldOpen) && !doorIsAtEnd) {
             // https://answers.unity.com/questions/570573/how-do-i-slowly-translate-a-object-to-a-other-obje.html - Vector3.MoveTowards() found here
             float step = doorSpeed * Time.deltaTime;
-            door.gameObject.transform.position = Vector3.MoveTowards(door.gameObject.transform.position, new Vector3(door.gameObject.transform.position.x, door.gameObject.transform.position.y, endZ), step);
+
+            if(Mathf.Approximately(endZ, 0)) {
+                door.gameObject.transform.position = Vector3.MoveTowards(door.gameObject.transform.position, endPosition.position, step);
+            } else {
+                door.gameObject.transform.position = Vector3.MoveTowards(door.gameObject.transform.position, new Vector3(door.gameObject.transform.position.x, door.gameObject.transform.position.y, endZ), step);
+            }
         } else if((debugOpen || doorShouldOpen) && doorIsAtEnd) {
             door.gameObject.SetActive(false);
         } else if(door.gameObject.transform.position.z >= endZ) {
@@ -66,13 +72,17 @@ public class KeyCardScanner : MonoBehaviour {
         }
 
 		if(collidedKeyCardType != null && collidedKeyCardType == acceptedKeyCardType && col.gameObject.tag == keyCard.tag && scanCooldown == 0.0f) {
-            audioSource.Play();
-            doorShouldOpen = true;
-            scanCooldown = scanCooldownTime;
-            if(closedScreen != null) {
-                closedScreen.gameObject.SetActive(false);
-                openScreen.gameObject.SetActive(true);
-            }
+            Open();
 		}
 	}
+
+    public void Open() {
+        audioSource.Play();
+        doorShouldOpen = true;
+        scanCooldown = scanCooldownTime;
+        if(closedScreen != null) {
+            closedScreen.gameObject.SetActive(false);
+            openScreen.gameObject.SetActive(true);
+        }
+    }
 }

@@ -21,6 +21,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class OVRPlayerController : MonoBehaviour
 {
+	public bool playerCanMove = false;
+	public AudioSource footsteps;
+
 	/// <summary>
 	/// The rate acceleration during movement.
 	/// </summary>
@@ -199,6 +202,20 @@ public class OVRPlayerController : MonoBehaviour
 		}
 	}
 
+	// this plays the footstep sounds every frame if they're not already playing and the player is moving
+	void FixedUpdate() {
+		if(playerCanMove) {
+			if(!Mathf.Approximately(Controller.velocity.x, 0) || !Mathf.Approximately(Controller.velocity.y, 0) || !Mathf.Approximately(Controller.velocity.z, 0)) {
+				if(!footsteps.isPlaying) {
+					// Debug.Log(Controller.velocity);
+					footsteps.Play();
+				}
+			} else {
+				footsteps.Stop();
+			}
+		}
+	}
+
 	void Update()
 	{
 		//Use keys to ratchet rotation
@@ -211,87 +228,90 @@ public class OVRPlayerController : MonoBehaviour
 
 	protected virtual void UpdateController()
 	{
-		if (useProfileData)
-		{
-			if (InitialPose == null)
+		if(playerCanMove) { // added to focus opening scene in ShipScene 
+			if (useProfileData)
 			{
-				// Save the initial pose so it can be recovered if useProfileData
-				// is turned off later.
-				InitialPose = new OVRPose()
+				if (InitialPose == null)
 				{
-					position = CameraRig.transform.localPosition,
-					orientation = CameraRig.transform.localRotation
-				};
-			}
+					// Save the initial pose so it can be recovered if useProfileData
+					// is turned off later.
+					InitialPose = new OVRPose()
+					{
+						position = CameraRig.transform.localPosition,
+						orientation = CameraRig.transform.localRotation
+					};
+				}
 
-			var p = CameraRig.transform.localPosition;
-			if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.EyeLevel)
+				var p = CameraRig.transform.localPosition;
+				if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.EyeLevel)
+				{
+					p.y = OVRManager.profile.eyeHeight - (0.5f * Controller.height) + Controller.center.y;
+				}
+				else if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.FloorLevel)
+				{
+					p.y = -(0.5f * Controller.height) + Controller.center.y;
+				}
+				CameraRig.transform.localPosition = p;
+			}
+			else if (InitialPose != null)
 			{
-				p.y = OVRManager.profile.eyeHeight - (0.5f * Controller.height) + Controller.center.y;
+				// Return to the initial pose if useProfileData was turned off at runtime
+				CameraRig.transform.localPosition = InitialPose.Value.position;
+				CameraRig.transform.localRotation = InitialPose.Value.orientation;
+				InitialPose = null;
 			}
-			else if (OVRManager.instance.trackingOriginType == OVRManager.TrackingOrigin.FloorLevel)
+
+			CameraHeight = CameraRig.centerEyeAnchor.localPosition.y;
+
+			if (CameraUpdated != null)
 			{
-				p.y = -(0.5f * Controller.height) + Controller.center.y;
+				CameraUpdated();
 			}
-			CameraRig.transform.localPosition = p;
+
+			UpdateMovement();
+
+			Vector3 moveDirection = Vector3.zero;
+
+			float motorDamp = (1.0f + (Damping * SimulationRate * Time.deltaTime));
+
+			MoveThrottle.x /= motorDamp;
+			MoveThrottle.y = (MoveThrottle.y > 0.0f) ? (MoveThrottle.y / motorDamp) : MoveThrottle.y;
+			MoveThrottle.z /= motorDamp;
+
+			moveDirection += MoveThrottle * SimulationRate * Time.deltaTime;
+
+			// Gravity
+			if (Controller.isGrounded && FallSpeed <= 0)
+				FallSpeed = ((Physics.gravity.y * (GravityModifier * 0.002f)));
+			else
+				FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
+
+			moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
+
+
+			if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
+			{
+				// Offset correction for uneven ground
+				float bumpUpOffset = Mathf.Max(Controller.stepOffset, new Vector3(moveDirection.x, 0, moveDirection.z).magnitude);
+				moveDirection -= bumpUpOffset * Vector3.up;
+			}
+
+			if (PreCharacterMove != null)
+			{
+				PreCharacterMove();
+				Teleported = false;
+			}
+
+			Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
+
+			// Move contoller
+			Controller.Move(moveDirection);
+
+			Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
+
+			if (predictedXZ != actualXZ)
+				MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
 		}
-		else if (InitialPose != null)
-		{
-			// Return to the initial pose if useProfileData was turned off at runtime
-			CameraRig.transform.localPosition = InitialPose.Value.position;
-			CameraRig.transform.localRotation = InitialPose.Value.orientation;
-			InitialPose = null;
-		}
-
-		CameraHeight = CameraRig.centerEyeAnchor.localPosition.y;
-
-		if (CameraUpdated != null)
-		{
-			CameraUpdated();
-		}
-
-		UpdateMovement();
-
-		Vector3 moveDirection = Vector3.zero;
-
-		float motorDamp = (1.0f + (Damping * SimulationRate * Time.deltaTime));
-
-		MoveThrottle.x /= motorDamp;
-		MoveThrottle.y = (MoveThrottle.y > 0.0f) ? (MoveThrottle.y / motorDamp) : MoveThrottle.y;
-		MoveThrottle.z /= motorDamp;
-
-		moveDirection += MoveThrottle * SimulationRate * Time.deltaTime;
-
-		// Gravity
-		if (Controller.isGrounded && FallSpeed <= 0)
-			FallSpeed = ((Physics.gravity.y * (GravityModifier * 0.002f)));
-		else
-			FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
-
-		moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
-
-
-		if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
-		{
-			// Offset correction for uneven ground
-			float bumpUpOffset = Mathf.Max(Controller.stepOffset, new Vector3(moveDirection.x, 0, moveDirection.z).magnitude);
-			moveDirection -= bumpUpOffset * Vector3.up;
-		}
-
-		if (PreCharacterMove != null)
-		{
-			PreCharacterMove();
-			Teleported = false;
-		}
-
-		Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
-
-		// Move contoller
-		Controller.Move(moveDirection);
-		Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
-
-		if (predictedXZ != actualXZ)
-			MoveThrottle += (actualXZ - predictedXZ) / (SimulationRate * Time.deltaTime);
 	}
 
 
@@ -349,14 +369,18 @@ public class OVRPlayerController : MonoBehaviour
 			ortEuler.z = ortEuler.x = 0f;
 			ort = Quaternion.Euler(ortEuler);
 
-			if (moveForward)
+			if (moveForward) {
 				MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward);
-			if (moveBack)
+			}
+			if (moveBack){
 				MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * BackAndSideDampen * Vector3.back);
-			if (moveLeft)
+			}
+			if (moveLeft) {
 				MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.left);
-			if (moveRight)
+			}
+			if (moveRight) {
 				MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
+			}
 
 
 
