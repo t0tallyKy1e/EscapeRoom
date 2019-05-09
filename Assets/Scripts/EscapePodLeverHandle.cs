@@ -7,10 +7,6 @@ public class EscapePodLeverHandle : MonoBehaviour {
     public float onRotation;
     public GameObject door;
     public bool debug;
-    
-    void Start() {
-        
-    }
 
     // unlock door if handle is moved - this script is not used asfar as I know
     void Update() {
