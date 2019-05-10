@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public bool oxygenTankCollected;
     public bool crystalCollected;
     public bool buttonSequenceIsCorrect;
+    public AudioSource correctButtonAudioSource;
     public bool winStatus;
     public AudioSource winSoundSource;
     private int timesToPlayWinSound = 3;
@@ -66,6 +67,10 @@ public class GameManager : MonoBehaviour {
 
     public void SetButtonSequenceStatus(bool status) {
         buttonSequenceIsCorrect = status;
+
+        if(buttonSequenceIsCorrect) {
+            correctButtonAudioSource.Play();
+        }
     }
 
     public void SetCrystalStatus(bool status) {

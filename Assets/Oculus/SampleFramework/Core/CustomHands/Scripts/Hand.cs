@@ -303,5 +303,17 @@ namespace OVRTouchSample
 
             return correctSequence;
         }
+
+        public bool isPressed(int button_number) {
+            bool pressed = false;
+
+            for(int i = 0; i < 5 && !pressed; i++) {
+                if(button_number == buttonsPressed[i]) {
+                    pressed = true;
+                }
+            }
+
+            return pressed;
+        }
     }
 }
